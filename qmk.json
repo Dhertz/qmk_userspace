@@ -1,4 +1,11 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["hhkb/jp", "dhertz"],
+        ["input_club/whitefox", "dhertz"],
+        ["mechlovin/kanu", "dhertz"],
+        ["percent/canoe", "dhertz"],
+        ["keychron/q2/iso_encoder", "dhertz"],
+        ["flehrad/bigswitch", "dhertz"]
+    ]
 }
