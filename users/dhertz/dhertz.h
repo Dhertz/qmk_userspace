@@ -15,13 +15,15 @@ enum custom_keycodes {
     CTRL_A,
     CMD_ALT_C,
     CMD_SFT_L,
-    ISO_COUNTRY_CODE,
     CMD_TAB_CMD,
     CMD_GRV_CMD,
     CMD_SFT_A,
     CMD_SFT_D,
     CMD_SFT_ALT_A,
     NEW_SAFE_RANGE,
+    CMD_SFT_LBR_CMD,
+    CMD_SFT_RBR_CMD,
+    CTL_TAB_CTL,
 };
 
 void mod_or_mod_with_macro(keyrecord_t *record, uint16_t kc_mod, char* cmd_or_macro);

@@ -17,10 +17,7 @@ __attribute__ ((weak))
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
-__attribute__ ((weak))
-uint32_t layer_state_set_keymap (uint32_t state) {
-  return state;
-}
+
 __attribute__ ((weak))
 void led_set_keymap(uint8_t usb_led) {}
 
@@ -46,6 +43,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case CMD_GRV_CMD:
             mod_or_mod_with_macro(record, KC_RGUI, SS_TAP(X_GRAVE));
             return false;
+        case CMD_SFT_LBR_CMD:
+            mod_or_mod_with_macro(record, KC_LGUI, SS_LSFT("["));
+            break;
+        case CMD_SFT_RBR_CMD:
+            mod_or_mod_with_macro(record, KC_LGUI, SS_LSFT("]"));
+            break;
+        case CTL_TAB_CTL:
+            mod_or_mod_with_macro(record, KC_RCTL, SS_TAP(X_TAB));
+            break;
     }
 
     if (record->event.pressed) {
@@ -92,13 +98,6 @@ void mod_or_mod_with_macro(keyrecord_t *record, uint16_t kc_mod, char* macro) {
         }
         unregister_code(kc_mod);
     }
-}
-
-// Runs state check and changes underglow color and animation
-// on layer change, no matter where the change was initiated
-// Then runs keymap's layer change check
-layer_state_t layer_state_set_user (layer_state_t state) {
-  return layer_state_set_keymap (state);
 }
 
 void led_set_user(uint8_t usb_led) {

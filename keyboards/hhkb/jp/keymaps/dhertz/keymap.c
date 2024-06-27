@@ -5,8 +5,6 @@ enum dhertz_keycodes {
     CMD_SPC = NEW_SAFE_RANGE,
     CMD_H,
     CMD_ALT_D,
-    CTL_TAB_CTL,
-    CMD_SFT_TAB_CMD,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -20,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift  |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|  `|Up |Shi|
      * |-----------------------------------------------------------|
-     * |NCt||  #|Alt|CtT|CmT|  LyrSpc |CGv|   |CSl|CSAa|Rig|Dow|Lef|
+     * |NCt||  #|CtT|Alt|CmT|  LyrSpc |CGv|CS{|CS}|CSAa|Rig|Dow|Lef|
      * `-----------------------------------------------------------'
      */
     [0] = LAYOUT_jp(
@@ -28,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,
              SRCH_CTL,   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,  KC_SCLN,KC_QUOT,KC_NUHS, KC_ENT,
               KC_LSFT,    KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,KC_COMM, KC_DOT, KC_SLSH,KC_NUBS,  KC_UP,   KC_RSFT,
-              NC_CTL, HSH_TLD,KC_LALT,CTL_TAB_CTL,CMD_TAB_CMD, LT(2, KC_SPC), CMD_GRV_CMD, CMD_SFT_TAB_CMD,CMD_SFT_L, CMD_SFT_ALT_A, KC_LEFT,KC_DOWN,KC_RGHT
+              NC_CTL, HSH_TLD,CTL_TAB_CTL,KC_LALT,CMD_TAB_CMD, LT(2, KC_SPC), CMD_GRV_CMD, CMD_SFT_LBR_CMD,CMD_SFT_RBR_CMD, CMD_SFT_ALT_A, KC_LEFT,KC_DOWN,KC_RGHT
         ),
 
   /* Layer 1: iPad mode (Fixed)
@@ -85,12 +83,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         case CMD_ALT_D:
             mod_or_mod_with_macro(record, KC_LGUI, SS_LALT("D"));
             break;
-        case CTL_TAB_CTL:
-            mod_or_mod_with_macro(record, KC_RCTL, SS_TAP(X_TAB));
-	    break;
-	case CMD_SFT_TAB_CMD:
-            mod_or_mod_with_macro(record, KC_LGUI, SS_DOWN(X_LSFT)SS_TAP(X_TAB)SS_UP(X_LSFT));
-	    break;
         default:
             return true;
     }
