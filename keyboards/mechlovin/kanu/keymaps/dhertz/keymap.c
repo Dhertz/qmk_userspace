@@ -25,7 +25,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       SRCH_CTL,   KC_A,  KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT, KC_END,
       KC_LSFT, HSH_TLD_1, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_PGDN,
       NC_CTL, KC_LALT, CMD_TAB_CMD, LT(1, KC_SPC), CMD_GRV_CMD, CMD_SFT_ALT_A, KC_LEFT, KC_DOWN, KC_RIGHT
-//    NC_CTL, KC_LALT, CMD_TAB_CMD, LYR_SPC, CMD_GRV_CMD, CMD_SFT_ALT_A, KC_LEFT, KC_DOWN, KC_RIGHT
       ),
     /* Layer 1: Special
      * ,---------------------------------------------------------------.
@@ -75,7 +74,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
                 } else {
                     SEND_STRING(SS_LALT("3"));
                 }
-		return false;
+                return false;
                 //break;
         }
     }
