@@ -78,6 +78,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case CMD_SFT_ALT_A:
                 SEND_STRING(SS_LGUI(SS_LALT("A")));
                 break;
+            case SCRNSHT:
+                SEND_STRING(SS_LGUI(SS_LSFT("4")));
+                break;
             default:
                 return process_record_keymap(keycode, record);
         }

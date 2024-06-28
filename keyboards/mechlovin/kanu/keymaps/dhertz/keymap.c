@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,---------------------------------------------------------------.
      * |  §| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|       |Iso|
      * |---------------------------------------------------------------|
-     * |ClTab|   |   |   |   |   |   |   |   |   |   |   |   |     |   |
+     * |ClTab|   |   |   |   |   |   |   |   |   |   |   |   |ScnSh|   |
      * |------------------------------------------------------`    |---|
      * |      |   |   |   |   |   |   |   |   |CSL|   |   |  `|    |   |
      * |---------------------------------------------------------------|
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_65_iso_blocker(
       KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, CMD_SFT_D,
       CTL_TAB_CTL, KC_1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CMD_SFT_L, KC_TRNS, KC_TRNS, KC_NUBS, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CMD_SFT_L, KC_TRNS, KC_TRNS, KC_NUBS, SCRNSHT, KC_TRNS,
       KC_TRNS, KC_GRV, KC_TRNS, KC_TRNS, CMD_ALT_C, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_TRNS,
       KC_TRNS, KC_TRNS, CMD_SFT_LBR_CMD, KC_TRNS, CMD_SFT_RBR_CMD, KC_TRNS, KC_HOME, KC_PGDN, KC_END
       ),
