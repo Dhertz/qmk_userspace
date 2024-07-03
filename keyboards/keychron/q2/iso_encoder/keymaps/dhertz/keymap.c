@@ -31,19 +31,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |ClTab|   |   |   |   |   |   |   |   |   |   |   |   |ScnSh|   |
      * |------------------------------------------------------`    |---|
-     * |      |   |   |   |   |   |   |   |   |CSL|   |   |  `|    |   |
+     * |Mke/Fl|   |   |   |   |   |   |   |   |CSL|   |   |  `|    |   |
      * |---------------------------------------------------------------|
      * |    |  `|   |   |CAC|   |   |   |   |   |   |   |      |PgU|   |
      * |---------------------------------------------------------------|
-     * |     |     |  CS{|                     |CS}|   |   |Hom|PgD|End|
+     * | LCtl|     |  CS{|                     |CS}|   |   |Hom|PgD|End|
      * `---------------------------------------------------------------'
      */
   [1] = LAYOUT_iso_68(
       KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F10, KC_F11, KC_TRNS, SLEEP_OSX,
       CTL_TAB_CTL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CMD_SFT_L, KC_TRNS, KC_TRNS, KC_NUBS, SCRNSHT, KC_END,
+      QK_MAKE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CMD_SFT_L, KC_TRNS, KC_TRNS, KC_NUBS, SCRNSHT, KC_END,
       KC_TRNS, KC_NUBS, KC_TRNS, KC_TRNS, CMD_ALT_C, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP,
-      KC_TRNS, KC_TRNS, CMD_SFT_LBR_CMD, KC_TRNS, CMD_SFT_RBR_CMD, KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END
+      KC_LCTL, KC_TRNS, CMD_SFT_LBR_CMD, KC_TRNS, CMD_SFT_RBR_CMD, KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END
       ),
 };
 
