@@ -74,7 +74,7 @@ void finished(tap_dance_state_t *state, void *user_data) {
             break;
         case 2:
             // Tap for N/A, hold for quit app
-            tap_or_hold(state, "", SS_LGUI("q"));
+            tap_or_hold(state, "git push" SS_TAP(X_ENTER), SS_LGUI("q"));
             break;
         case 3:
             tap_or_hold(state,
