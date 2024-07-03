@@ -6,9 +6,12 @@
 
 #include "quantum.h"
 
+#define KC_OSX_EJECT 0x66
 #define SRCH_CTL CTL_T(KC_F19)
 #define LYR_SPC LT(1, KC_SPC)
 #define NC_CTL CTL_T(KC_F18)
+#define SLEEP_OSX LALT(LGUI(KC_OSX_EJECT))
+#define LOCK_OSX LSFT(LCTL(KC_OSX_EJECT))
 
 enum custom_keycodes {
     HSH_TLD = SAFE_RANGE,

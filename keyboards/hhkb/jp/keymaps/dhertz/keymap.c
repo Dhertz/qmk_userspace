@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Layer 2: HHKB mode (Space)
    * ,-----------------------------------------------------------.
-   * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+   * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Sle|
    * |-----------------------------------------------------------|
    * |Caps |DL0|DL1|   |   |   |   |   |Psc|Slk|Pus|Up |   |ScSht|
    * |------------------------------------------------------`    |
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
   [1] = LAYOUT_jp(
-            KC_PWR,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10, KC_F11, KC_F12, KC_INS,KC_DEL,
+            KC_PWR,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10, KC_F11, KC_F12, KC_INS,SLEEP_OSX,
             KC_CAPS,  DF(0),  DF(1),KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCT,KC_PAUS,  KC_UP,KC_TRNS,
             KC_TRNS,   KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,KC_TRNS,KC_TRNS,KC_BSPC, KC_DEL,CMD_SFT_L,KC_LEFT,KC_RGHT,KC_TRNS,SCRNSHT,
             KC_TRNS,    KC_TRNS,KC_TRNS,CMD_ALT_C,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_DOWN,KC_TRNS,KC_PGUP,KC_TRNS,

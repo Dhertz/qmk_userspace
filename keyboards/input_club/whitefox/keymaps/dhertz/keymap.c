@@ -37,7 +37,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     /* Layer 1: HHKB mode (Space)
      * ,---------------------------------------------------------------.
-     * |  §| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|       |Iso|
+     * |  §| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|       |Sle|
      * |---------------------------------------------------------------|
      * |ClTab|   |   |   |   |   |   |   |Psc|Slk|Pus| Up|   |ScnSh|   |
      * |------------------------------------------------------`    |---|
@@ -49,7 +49,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
     [1] = LAYOUT_iso( \
-        KC_GRV,     KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11,  KC_F12, KC_TRNS,  CMD_SFT_D,\
+        KC_GRV,     KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11,  KC_F12, KC_TRNS,  SLEEP_OSX,\
         CTL_TAB_CTL,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,BL_UP, KC_TRNS,KC_TRNS,KC_PSCR,KC_SLCT,KC_TRNS,KC_PAUS,  KC_UP,              KC_TRNS,\
         KC_TRNS,    KC_VOLD,KC_VOLU,KC_MUTE,KC_TRNS,BL_TOGG,KC_TRNS,KC_BSPC,KC_DEL, CMD_SFT_L,KC_LEFT,KC_RGHT,KC_NUBS,   SCRNSHT,KC_TRNS,\
         KC_TRNS,    KC_NUBS,KC_TRNS,KC_TRNS,CMD_ALT_C,BL_DOWN, KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_DOWN,KC_TRNS,KC_TRNS,  KC_PGUP,KC_TRNS,\
