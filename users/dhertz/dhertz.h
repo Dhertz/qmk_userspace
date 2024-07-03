@@ -7,6 +7,7 @@
 #include "quantum.h"
 
 #define KC_OSX_EJECT 0x66
+#define X_OSX_EJECT 66
 #define SRCH_CTL CTL_T(KC_F19)
 #define LYR_SPC LT(1, KC_SPC)
 #define NC_CTL CTL_T(KC_F18)
