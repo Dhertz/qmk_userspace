@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
     rgb_matrix_mode(RGB_MATRIX_NONE);
-    rgb_matrix_set_color_all(RGB_BLACK);
+    rgb_matrix_set_color_all(RGB_AZURE);
 }
 
 uint32_t cancel_cmd(uint32_t trigger_time, void *cb_arg) {
@@ -83,12 +83,19 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 bool rgb_matrix_indicators_kb(void) {
     switch(get_highest_layer(layer_state|default_layer_state)) {
         case 1:
-            rgb_matrix_set_color_all(RGB_BLACK);
-            rgb_matrix_set_color_all(25, 25, 112);
+            rgb_matrix_set_color_all(RGB_PURPLE); //25, 25, 112);
             break;
         default:
-            rgb_matrix_set_color_all(RGB_BLACK);
+            rgb_matrix_set_color_all(RGB_AZURE);
             break;
     }
     return true;
+}
+
+void suspend_power_down_user(void) {
+    rgblight_disable_noeeprom();
+}
+
+void suspend_wakeup_init_user(void) {
+    rgblight_enable_noeeprom();
 }
