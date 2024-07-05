@@ -48,7 +48,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 void keyboard_post_init_user(void) {
-    rgb_matrix_mode(RGB_MATRIX_NONE);
+    rgb_matrix_enable();
+    rgb_matrix_mode(RGB_MATRIX_CUSTOM_off_after_x_seconds);
     rgb_matrix_set_color_all(RGB_AZURE);
 }
 
@@ -86,16 +87,18 @@ bool rgb_matrix_indicators_kb(void) {
             rgb_matrix_set_color_all(RGB_PURPLE); //25, 25, 112);
             break;
         default:
-            rgb_matrix_set_color_all(RGB_AZURE);
             break;
     }
     return true;
 }
 
 void suspend_power_down_user(void) {
-    rgblight_disable_noeeprom();
+    rgb_matrix_disable_noeeprom();
 }
 
 void suspend_wakeup_init_user(void) {
-    rgblight_enable_noeeprom();
+    rgb_matrix_enable_noeeprom();
+    rgb_matrix_mode(RGB_MATRIX_CUSTOM_off_after_x_seconds);
+    rgb_matrix_set_color_all(RGB_AZURE);
 }
+
