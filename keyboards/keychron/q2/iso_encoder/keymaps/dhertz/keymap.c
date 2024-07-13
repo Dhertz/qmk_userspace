@@ -101,7 +101,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 void keyboard_post_init_user(void) {
     rgb_matrix_enable();
     rgb_matrix_mode(RGB_MATRIX_CUSTOM_off_after_x_seconds);
-    rgb_matrix_set_color_all(RGB_AZURE);
 }
 
 uint32_t cancel_cmd(uint32_t trigger_time, void *cb_arg) {
@@ -135,7 +134,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 bool rgb_matrix_indicators_kb(void) {
     switch(get_highest_layer(layer_state|default_layer_state)) {
         case 1:
-            rgb_matrix_set_color_all(RGB_PURPLE); //25, 25, 112);
+            rgb_matrix_set_color_all(RGB_PURPLE);
             break;
         default:
             break;
