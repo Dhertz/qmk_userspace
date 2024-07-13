@@ -70,7 +70,7 @@ void finished(tap_dance_state_t *state, void *user_data) {
     switch (state->count) {
         case 1:
             // Tap for F24 - zoom hangup, hold to sleep
-            tap_or_hold(state, SS_TAP(X_F24), SS_LALT(SS_LGUI(SS_TAP(X_OSX_EJECT))));
+            tap_or_hold(state, SS_LGUI(SS_TAP(X_W)), SS_LALT(SS_LGUI(SS_TAP(X_OSX_EJECT))));
             break;
         case 2:
             // Tap for N/A, hold for quit app
