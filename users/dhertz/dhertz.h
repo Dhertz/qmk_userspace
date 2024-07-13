@@ -16,6 +16,7 @@
 
 enum custom_keycodes {
     HSH_TLD = SAFE_RANGE,
+    HSH_TLD_1,
     CTRL_A,
     CMD_ALT_C,
     CMD_SFT_L,

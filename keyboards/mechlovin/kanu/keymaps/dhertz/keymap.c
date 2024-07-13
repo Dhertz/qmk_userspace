@@ -1,10 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "dhertz.h"
 
-enum custom_keycodes_kb {
-    HSH_TLD_1 = NEW_SAFE_RANGE,
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Default Layer
      * ,---------------------------------------------------------------.
@@ -63,22 +59,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             break;
     }
     return state;
-}
-
-bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        switch(keycode) {
-            case HSH_TLD_1:
-                if (get_mods()&(MOD_BIT(KC_LSFT)|MOD_BIT(KC_RSFT))) {
-                    SEND_STRING(SS_TAP(X_GRV));
-                } else {
-                    SEND_STRING(SS_LALT("3"));
-                }
-                return false;
-                //break;
-        }
-    }
-    return true;
 }
 
 void suspend_power_down_user(void) {

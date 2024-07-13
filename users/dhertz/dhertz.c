@@ -63,6 +63,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     SEND_STRING(SS_LALT("3"));
                 }
                 break;
+            case HSH_TLD_1:
+                if (get_mods()&(MOD_BIT(KC_LSFT)|MOD_BIT(KC_RSFT))) {
+                    SEND_STRING(SS_TAP(X_GRV));
+                } else {
+                    SEND_STRING(SS_LALT("3"));
+                }
+                break;
             case CTRL_A:
                 SEND_STRING(SS_LCTL("a"));
                 break;
