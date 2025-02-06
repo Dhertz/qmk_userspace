@@ -3,6 +3,8 @@
 
 #include "dhertz.h"
 
+uint32_t current_default_layer = (1 << 0);
+
 // Add reconfigurable functions here, for keymap customization
 // This allows for a global, userspace functions, and continued
 // customization of the keymap.  Use _keymap instead of _user
@@ -88,6 +90,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case SCRNSHT:
                 SEND_STRING(SS_LGUI(SS_LSFT("4")));
                 break;
+            case NUBS_GRV:
+                if (current_default_layer == (1 << 1)) {
+                    tap_code(KC_NUBS);
+                } else {
+                    tap_code(KC_GRV);
+                }
+                break;
             default:
                 return process_record_keymap(keycode, record);
         }
@@ -112,5 +121,10 @@ void mod_or_mod_with_macro(keyrecord_t *record, uint16_t kc_mod, char* macro) {
 
 void led_set_user(uint8_t usb_led) {
    led_set_keymap(usb_led);
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+    current_default_layer = state;
+    return state;
 }
 

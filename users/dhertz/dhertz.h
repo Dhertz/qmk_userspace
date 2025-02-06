@@ -29,6 +29,7 @@ enum custom_keycodes {
     CMD_SFT_RBR_CMD,
     CTL_TAB_CTL,
     SCRNSHT,
+    NUBS_GRV,
     NEW_SAFE_RANGE,
 };
 
