@@ -1,9 +1,13 @@
-#ifndef USERSPACE_CONFIG_H
-#define USERSPACE_CONFIG_H
+#pragma once
 
 #ifdef TAPPING_TERM
 #undef TAPPING_TERM
 #endif // TAPPING_TERM
 #define TAPPING_TERM 200
 
-#endif // !USERSPACE_CONFIG_H
+#define ENABLE_COMPILE_KEYCODE
+
+#define QUICK_TAP_TERM 0
+
+#define FLOW_TAP_TERM 150
+#define SPECULATIVE_HOLD

@@ -83,7 +83,7 @@ void finished(tap_dance_state_t *state, void *user_data) {
             );
             if (state->pressed) {
                 //wait for the compile to be done
-                wait_ms(5000);
+                wait_ms(30000);
                 reset_keyboard();
             }
             break;

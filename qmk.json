@@ -6,7 +6,7 @@
         ["mechlovin/kanu", "dhertz"],
         ["percent/canoe", "dhertz"],
         ["keychron/q2/iso_encoder", "dhertz"],
-        ["flehrad/bigswitch", "dhertz"]
+        ["flehrad/bigswitch", "dhertz"],
         ["flehrad/bigswitch", "jolie"]
     ]
 }

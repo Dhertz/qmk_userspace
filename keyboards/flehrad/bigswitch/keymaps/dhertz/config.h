@@ -2,5 +2,3 @@
 #undef TAPPING_TERM
 #define TAPPING_TERM 500
 #endif
-
-#define ENABLE_COMPILE_KEYCODE

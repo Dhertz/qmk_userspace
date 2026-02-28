@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
   [1] = LAYOUT_iso_68(
-      NUBS_GRV_DIP, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F10, KC_F11, KC_TRNS, SLEEP_OSX,
+      NUBS_GRV_DIP, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, SLEEP_OSX,
       CTL_TAB_CTL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
       QK_MAKE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CMD_SFT_L, KC_TRNS, KC_TRNS, KC_NUBS, SCRNSHT, KC_END,
       KC_TRNS, GRV_NUBS_DIP, KC_TRNS, KC_TRNS, CMD_ALT_C, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP,
@@ -98,48 +98,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     return false;
 }
 
-void keyboard_post_init_user(void) {
-    rgblight_enable_noeeprom();
-    rgb_matrix_set_color_all(RGB_AZURE);
-    rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-}
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [1] = { ENCODER_CCW_CW(ENC_CCW, ENC_CW) },
+};
+#endif
 
-uint32_t cancel_cmd(uint32_t trigger_time, void *cb_arg) {
-    if (get_highest_layer(layer_state|default_layer_state) > 0) {
-        return 20;
-    }
-    unregister_code(KC_LCMD);
-    return 0;
-}
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (get_highest_layer(layer_state|default_layer_state) == 0) {
-        if (clockwise) {
-            tap_code_delay(KC_VOLU, 10);
-        } else {
-            tap_code_delay(KC_VOLD, 10);
-        }
-    } else {
-        if ((get_mods() & MOD_BIT(KC_LCMD)) != MOD_BIT(KC_LCMD)) {
-            register_code(KC_LCMD);
-            defer_exec(20, cancel_cmd, NULL);
-        }
-        if (clockwise) {
-            tap_code(KC_TAB);
-        } else {
-            tap_code16(S(KC_TAB));
-        }
-    }
-    return false;
-}
-bool rgb_matrix_indicators_kb(void) {
-    switch(get_highest_layer(layer_state|default_layer_state)) {
-        case 1:
-            rgb_matrix_set_color_all(RGB_PURPLE);
-            break;
-        default:
-            rgb_matrix_set_color_all(RGB_AZURE);
-            break;
-    }
-    return true;
-}

@@ -31,7 +31,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_iso( \
         KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS, KC_EQL, KC_BSPC,    KC_DEL, \
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,             KC_HOME,\
-        KC_CAPS,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_BSLS,     KC_ENT, KC_END, \
+        SRCH_CTL,KC_A,  KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_BSLS,     KC_ENT, KC_END, \
         KC_LSFT,HSH_TLD,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,     KC_UP,  KC_PGDN,\
         NC_CTL, KC_LALT, CMD_TAB_CMD,              LYR_SPC,             CMD_GRV_CMD, KC_RALT, CMD_SFT_ALT_A, KC_LEFT,KC_DOWN,KC_RGHT \
     ),
@@ -57,11 +57,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-void keyboard_post_init_user(void) {
+void keyboard_post_init_keymap(void) {
     led_matrix_set_value_all(0);
 }
 
-bool led_matrix_indicators_kb(void) {
+bool led_matrix_indicators_user(void) {
     switch(get_highest_layer(layer_state)) {
         case 1:
             led_matrix_set_value_all(255);
